@@ -10,7 +10,7 @@ const PORT = process.env.PORT ?? 3000;
 
 const app = express();
 app.get("/", (_req, res) => {
-  res.send(`harmaarouva v${VERSION}`);
+  res.send(`ghostbird v${VERSION}`);
 });
 app.use(bodyParser.json());
 
@@ -19,7 +19,7 @@ const USER = process.env.AUTH_USER;
 const PASS = process.env.AUTH_PASSWORD;
 if (!USER || !PASS) {
   console.error(
-    "[harmaarouva] require env variables AUTH_USER and AUTH_PASSWORD for basic http auth"
+    "[ghostbird] require env variables AUTH_USER and AUTH_PASSWORD for basic http auth"
   );
   process.exit(1);
 }
@@ -36,13 +36,13 @@ app.use(
 const TG_TOKEN = process.env.TG_TOKEN;
 const TG_CHAT_ID = process.env.TG_CHAT_ID;
 if (!TG_TOKEN) {
-  console.error("[harmaarouva] require env variables TG_TOKEN, TG_CHAT_ID");
+  console.error("[ghostbird] require env variables TG_TOKEN, TG_CHAT_ID");
   process.exit(1);
 }
 const TG_URL = `https://api.telegram.org/bot${TG_TOKEN}`;
 // Template read
 if (!fs.existsSync("./message.html")) {
-  console.error("[harmaarouva] require file message.html");
+  console.error("[ghostbird] require file message.html");
   process.exit(1);
 }
 const TEMPLATE = fs.readFileSync("./message.html", "utf-8");
@@ -76,9 +76,9 @@ app.post("/published", (req, res) => {
   const post = req?.body?.post?.current;
 
   if (!post) {
-    console.error("[harmaarouva] invalid post to publish");
+    console.error("[ghostbird] invalid post to publish");
     console.error(req.body);
-    return res.status(400).send(`harmaarouva fail: post.current not present`);
+    return res.status(400).send(`ghostbird fail: post.current not present`);
   }
 
   const text = formatTemplate(TEMPLATE, post);
@@ -92,9 +92,9 @@ app.post("/published", (req, res) => {
     },
   });
 
-  res.send(`harmaarouva ok`);
+  res.send(`ghostbird ok`);
 });
 
 app.listen(PORT, () => {
-  console.log(`[harmaarouva] listening on port ${PORT}`);
+  console.log(`[ghostbird] listening on port ${PORT}`);
 });

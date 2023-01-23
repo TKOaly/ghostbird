@@ -1,5 +1,5 @@
 {
-  "name": "harmaarouva",
+  "name": "ghostbird",
   "version": "1.0.0",
   "description": "A simple Ghost webhook -> Telegram backend",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TKOaly/harmaarouva.git"
+    "url": "git+https://github.com/TKOaly/ghostbird.git"
   },
   "author": "Eetu Raunio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TKOaly/harmaarouva/issues"
+    "url": "https://github.com/TKOaly/ghostbird/issues"
   },
-  "homepage": "https://github.com/TKOaly/harmaarouva#readme",
+  "homepage": "https://github.com/TKOaly/ghostbird#readme",
   "dependencies": {
     "axios": "^1.2.3",
     "body-parser": "^1.20.1",

@@ -9,7 +9,7 @@ services:
     ports:
       - 3001:2368
   app:
-    container_name: harmaarouva.localhost
+    container_name: ghostbird.localhost
     build: .
     volumes:
       - .:/app
