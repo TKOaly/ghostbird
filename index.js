@@ -29,8 +29,13 @@ app.use(
       [process.env.AUTH_USER]: process.env.AUTH_PASSWORD,
     },
     unauthorizedResponse: "Unauthorized",
+    challenge: true,
   })
 );
+// For testing credentials
+app.get("/auth", (_req, res) => {
+  res.send(`ghostbird auth successful`);
+});
 
 // Telegram credentials
 const TG_TOKEN = process.env.TG_TOKEN;
