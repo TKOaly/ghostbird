@@ -1,5 +1,7 @@
 # ghostbird
 
+[![docker](https://github.com/TKOaly/ghostbird/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/TKOaly/ghostbird/actions/workflows/docker-image.yml)
+
 A simple Ghost webhook -> Telegram backend
 
 ## message template
