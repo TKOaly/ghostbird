@@ -2,6 +2,13 @@
 
 A simple Ghost webhook -> Telegram backend
 
+## message template
+
+Possible replacements:
+`%TITLE%`, `%EXCERPT%` (prefer URL preview), `%AUTHORS%` (comma separated), `%AUTHOR%` (primary author), `%TAGS%` (comma separated), `%TAG%` (primary tag), `%URL%`
+
+The message is processed as MarkdownV2 ([Telegram documentation](https://core.telegram.org/bots/api#markdownv2-style))
+
 ## developing
 
 Developing is tricky, as we need a local Ghost instance to test webhooks.  
