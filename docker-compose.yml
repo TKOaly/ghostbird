@@ -17,5 +17,7 @@ services:
     command: npm run dev
     environment:
       - PORT=3000
+      - AUTH_USER=vendla
+      - AUTH_PASSWORD=willebrand
     ports:
       - 3000:3000

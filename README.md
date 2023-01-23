@@ -13,7 +13,7 @@ Unfortunately it's currently missing database seeding or a sample database.
 3. navigate to localhost:3001/ghost
 4. set up blog with any information
 5. configure webhook (ghost settings -> integrations -> custom)
-   - add a webhook with `event: Post published` and `URL: http://harmaarouva.localhost:3000/published`
+   - add a webhook with `event: Post published` and `URL: http://vendla:willebrand@harmaarouva.localhost:3000/published`
 6. test webhook by publishing a post in ghost
 
 The harmaarouva app will automatically update as you develop locally, as it reads the docker host's `index.js` and runs with `nodemon` for automatic reloads.
