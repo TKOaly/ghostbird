@@ -7,7 +7,8 @@ A simple Ghost webhook -> Telegram backend
 Possible replacements:
 `%TITLE%`, `%EXCERPT%` (prefer URL preview), `%AUTHORS%` (comma separated), `%AUTHOR%` (primary author), `%TAGS%` (comma separated), `%TAG%` (primary tag), `%URL%`
 
-The message is processed as MarkdownV2 ([Telegram documentation](https://core.telegram.org/bots/api#markdownv2-style))
+The message is processed as Telegram HTML ([Telegram documentation](https://core.telegram.org/bots/api#html-style))  
+**Remember: `&lt;`, `&gt;`, `&amp;` and `&quot;` instead of `<>&"` when not in HTML tags.**
 
 ## developing
 
