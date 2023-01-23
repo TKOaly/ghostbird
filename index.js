@@ -36,11 +36,6 @@ app.use(
 app.get("/auth", (_req, res) => {
   res.send(`ghostbird auth successful`);
 });
-// REMOVE THIS ONCE PROBLEM HAS BEEN SOLVED.
-// I CANNOT STRESS IT ENOUGH. THIS SHOULD ALREADY BE REMOVED.
-// As these are only visible internally there is not much harm done, but could be fatal.
-console.log(process.env.AUTH_USER);
-console.log(process.env.AUTH_PASSWORD);
 
 // Telegram credentials
 const TG_TOKEN = process.env.TG_TOKEN;
