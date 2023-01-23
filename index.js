@@ -9,6 +9,11 @@ app.get("/", (_req, res) => {
   res.send(`harmaarouva v${VERSION}`);
 });
 
+app.post("/published", (req, res) => {
+  console.log(req);
+  res.send(`harmaarouva ok`);
+});
+
 app.listen(PORT, () => {
   console.log(`[harmaarouva] listening on port ${PORT}`);
 });

@@ -1,0 +1,21 @@
+version: "3"
+services:
+  ghost:
+    container_name: ghost.localhost
+    image: "ghost:5.31"
+    environment:
+      - url=http://localhost:3001
+      - NODE_ENV=development
+    ports:
+      - 3001:2368
+  app:
+    container_name: harmaarouva.localhost
+    build: .
+    volumes:
+      - .:/app
+    restart: always
+    command: npm run dev
+    environment:
+      - PORT=3000
+    ports:
+      - 3000:3000
