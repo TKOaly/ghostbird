@@ -6,4 +6,4 @@ COPY package*.json ./
 RUN npm install
 
 COPY index.js .
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
