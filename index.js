@@ -72,9 +72,9 @@ function formatTemplate(template, post) {
       sanitize(post.customExcerpt ?? post.excerpt ?? "<No content>")
     )
     .replace("%AUTHORS%", sanitize(authors))
-    .replace("%AUTHOR%", sanitize(post.primary_author.name ?? "<No author>"))
+    .replace("%AUTHOR%", sanitize(post.primary_author?.name ?? "<No author>"))
     .replace("%TAGS%", sanitize(tags))
-    .replace("%TAG%", sanitize(post.primary_tag.name ?? ""));
+    .replace("%TAG%", sanitize(post.primary_tag?.name ?? ""));
 }
 
 app.post("/published", (req, res) => {
