@@ -94,6 +94,7 @@ app.post("/published", (req, res) => {
       chat_id: TG_CHAT_ID,
       text,
       parse_mode: "HTML",
+      disable_web_page_preview: false,
     },
   });
 
