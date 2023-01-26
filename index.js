@@ -87,16 +87,21 @@ app.post("/published", (req, res) => {
   }
 
   const text = formatTemplate(TEMPLATE, post);
-  axios({
-    method: "GET",
-    url: `${TG_URL}/sendMessage`,
-    data: {
-      chat_id: TG_CHAT_ID,
-      text,
-      parse_mode: "HTML",
-      disable_web_page_preview: false,
-    },
-  });
+  try {
+    axios({
+      method: "GET",
+      url: `${TG_URL}/sendMessage`,
+      data: {
+        chat_id: TG_CHAT_ID,
+        text,
+        parse_mode: "HTML",
+        disable_web_page_preview: false,
+      },
+    });
+  } catch (e) {
+    console.error(e);
+    return res.status(500).send(`ghostbird fail`);
+  }
 
   res.send(`ghostbird ok`);
 });
