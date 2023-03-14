@@ -9,10 +9,16 @@ const VERSION = require("./package.json").version;
 const PORT = process.env.PORT ?? 3000;
 
 const app = express();
+
 app.get("/", (_req, res) => {
   res.send(`ghostbird v${VERSION}`);
 });
-app.use(bodyParser.json());
+
+app.use(
+  bodyParser.json({
+    limit: "50mb",
+  })
+);
 
 // Basic HTTP authorization
 const USER = process.env.AUTH_USER;
